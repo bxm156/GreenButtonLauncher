@@ -1,14 +1,17 @@
-from django.shortcuts import render_to_response, redirect, RequestContext
+from django.shortcuts import render_to_response, redirect, RequestContext, get_object_or_404
 from forms import UploadForm
-import hashlib
 from models import GreenButtonData
 from django.db import IntegrityError
-import cStringIO, base64, uuid
+import cStringIO, hashlib, base64, uuid
+from django.http import Http404, HttpResponse
+
 #from lxml import etree
 #from GreenButtonLauncher.settings import STATIC_ROOT
 
 def index(request):
-    
+    """
+    The Index page
+    """
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
         if form.is_valid():
@@ -25,7 +28,7 @@ def index(request):
             #xmlschema.validate(etree.parse(output))
             
             data = GreenButtonData()
-            data.pin = base64.b64encode(uuid.uuid4().bytes)[:7]
+            data.pin = base64.b64encode(uuid.uuid4().bytes,"az")[:7]
             print data.pin
             data.data = output.getvalue()
             output.close()
@@ -38,23 +41,29 @@ def index(request):
                 except IntegrityError:
                     success = False
                     data.pin = base64.b64encode(uuid.uuid4().bytes)[:7]
-                
-            
-            print "Data Saved"
+
             context = RequestContext(request,
                          {'errors':form.errors,
-                         'form':UploadForm()})
+                         'form':UploadForm(),
+                         'pin':data.pin})
             return render_to_response('index.html',context)
     else:
         return render_to_response('index.html',{'form':UploadForm()},
                               context_instance=RequestContext(request))
 
-def getData(request):
+def getData(request, apin):
     """
     The API URL for returning data to the Android App
     """
-    pass
+    obj = get_object_or_404(GreenButtonData,pin=apin)
+    return HttpResponse(obj.data)
 
-def delete(request):
-    pass
+
+def delete(request, apin):
+    """
+    Delete an object based on the PIN
+    """
+    obj = get_object_or_404(GreenButtonData,pin=apin)
+    obj.delete()
+    return HttpResponse()
     
