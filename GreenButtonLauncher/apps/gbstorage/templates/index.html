@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block body %}
+{% block contentArea %}
 {% if pin %}
 	Pin: {{ pin }}
 {% endif %}
@@ -10,4 +10,4 @@
 		{{ form.as_p }}
 		<input type="submit" value="Submit" />
 	</form>
-{% endblock body %}
+{% endblock contentArea %}

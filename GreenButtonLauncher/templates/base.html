@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>
-			{% block title %}GreenButtonLauncher{% endblock title %}
+			{% block title %}Budget It Yourself{% endblock title %}
 		</title>
 		{% block css %}
 		<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/screen.css" type="text/css" media="screen, projection">
@@ -11,11 +11,37 @@
 		<!--[if lt IE 8]>
 			<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css">
 		{% endblock css %}
 	</head>
 	<body>
-		{% block body %}
-		
-		{% endblock body %}
+		<div class="container">
+			{% block body %}
+			<div id="header" class="span-24 last headerBackground">
+				{% block header %}
+					<img src="{{ STATIC_URL }}images/header-logo.jpg">
+				{% endblock header %}
+			</div>
+			<div id="present" class="span-24 last presentBackground">
+				{% block present %}
+				<img src="{{ STATIC_URL }}images/device.jpg">
+				{% endblock present %}
+			</div>
+			<div id="buttonRow" class="span-24 last buttonRow">
+				{% block buttonRow %}
+				<a id="AboutButton" href="#">About</a>
+				<a id="UploadButton" href="#">Upload</a>
+				<a id="ContactButton" href="#">Contact</a>
+				<a id="NewsButton" href="#">News</a>
+				{% endblock buttonRow %}
+			</div>
+			<div id="contentArea" class="span-24 last">
+				{% block contentArea %}
+				
+				{% endblock contentArea %}
+			</div>
+			
+			{% endblock body %}
+		</div>
 	</body>
 </html>
