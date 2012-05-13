@@ -6,42 +6,67 @@
 			{% block title %}Budget It Yourself{% endblock title %}
 		</title>
 		{% block css %}
+		<link type="text/css" href="{{ STATIC_URL }}css/mint-choc/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/screen.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/print.css" type="text/css" media="print"> 
 		<!--[if lt IE 8]>
 			<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css">
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>  
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/buttons.js"></script> 
 		{% endblock css %}
 	</head>
 	<body>
-		<div class="container">
-			{% block body %}
-			<div id="header" class="span-24 last headerBackground">
-				{% block header %}
-					<img src="{{ STATIC_URL }}images/header-logo.jpg">
-				{% endblock header %}
-			</div>
-			<div id="present" class="span-24 last presentBackground">
-				{% block present %}
-				<img src="{{ STATIC_URL }}images/device.jpg">
-				{% endblock present %}
-			</div>
-			<div id="buttonRow" class="span-24 last buttonRow">
-				{% block buttonRow %}
-				<a id="AboutButton" href="#">About</a>
-				<a id="UploadButton" href="#">Upload</a>
-				<a id="ContactButton" href="#">Contact</a>
-				<a id="NewsButton" href="#">News</a>
-				{% endblock buttonRow %}
-			</div>
-			<div id="contentArea" class="span-24 last">
-				{% block contentArea %}
+		<div class="siteArea">
+			<div class="container">
+				{% block body %}
+				<div id="header" class="span-24 last headerBackground">
+					{% block header %}
+						<img src="{{ STATIC_URL }}images/header-logo.jpg">
+					{% endblock header %}
+				</div>
+				<div id="present" class="span-24 last presentBackground">
+					{% block present %}
+					<div id="presentArea">
+						<div id="presentAreaHome">
+							<img src="{{ STATIC_URL }}images/device.jpg">
+						</div>
+						<div id="presentAreaAbout">
+							<img src="{{ STATIC_URL }}images/device.jpg">
+						</div>
+						<div id="presentAreaUpload">
+							<img src="{{ STATIC_URL }}images/device.jpg">
+						</div>
+						<div id="presentAreaNews">
+							<img src="{{ STATIC_URL }}images/device.jpg">
+						</div>
+						<div id="presentAreaContact">
+							<img src="{{ STATIC_URL }}images/device.jpg">
+						</div>
+					</div>
+					{% endblock present %}
+				</div>
+				<div id="buttonRow" class="span-24 last buttonRow">
+					{% block buttonRow %}
+					<a id="AboutButton" onclick="onAbout()">About</a>
+					<a id="UploadButton" onclick="onUpload()">Upload</a>
+					<div class="subLogo">
+						<img src="{{ STATIC_URL }}images/bwlogo.jpg">
+					</div>
+					<a id="ContactButton" onclick="onContact()">Contact</a>
+					<a id="NewsButton" onclick="onNews()">News</a>
+					{% endblock buttonRow %}
+				</div>
+				<div id="contentArea" class="span-24 last">
+					{% block contentArea %}
+					
+					{% endblock contentArea %}
+				</div>
 				
-				{% endblock contentArea %}
+				{% endblock body %}
 			</div>
-			
-			{% endblock body %}
 		</div>
 	</body>
 </html>

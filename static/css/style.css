@@ -55,8 +55,49 @@
 	height: 75px;
 	display: block;
 	text-indent: -9999px;
-	float:right;
+	float: right;
 }
 .buttonRow #ContactButton:hover {
 	background-position: 0 -75px;
+}
+#presentArea {
+	position: relative;
+	width: 950px;
+	height: 448px;
+	text-align: center;
+}
+#presentAreaHome {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaAbout {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaUpload {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaNews {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaContact {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.subLogo {
+	float:left;
+	width:270px;
+	text-align:center;
 }
