@@ -66,4 +66,8 @@ def delete(request, apin):
     obj = get_object_or_404(GreenButtonData,pin=apin)
     obj.delete()
     return HttpResponse()
+
+def getHash(request,apin):
+    obj = get_object_or_404(GreenButtonData,pin=apin)
+    return HttpResponse(obj.data_hash)
     

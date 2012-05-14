@@ -1,0 +1,103 @@
+.headerBackground {
+	background-image: url(/static/images/header-bg.jpg);
+	background-repeat: repeat-x;
+	height: 127px;
+	text-align:center;
+}
+.presentBackground {
+	background-image: url(/static/images/present-bg.jpg);
+	background-repeat: repeat-x;
+	height: 448px;
+	text-align:center;
+}
+.buttonRow {
+	background-color: #000000;
+	height:75px;
+	text-align:center;
+	width: 100%;
+}
+.buttonRow #AboutButton {
+	background: url(/static/images/about.jpg) no-repeat 0 0;
+	width: 170px;
+	height: 75px;
+	display: block;
+	text-indent: -9999px;
+	float:left;
+}
+.buttonRow #AboutButton:hover {
+	background-position: 0 -75px;
+}
+.buttonRow #UploadButton {
+	background: url(/static/images/upload.jpg) no-repeat 0 0;
+	width: 170px;
+	height: 75px;
+	display: block;
+	text-indent: -9999px;
+	float:left;
+}
+.buttonRow #UploadButton:hover {
+	background-position: 0 -75px;
+}
+.buttonRow #NewsButton {
+	background: url(/static/images/news.jpg) no-repeat 0 0;
+	width: 170px;
+	height: 75px;
+	display: block;
+	text-indent: -9999px;
+	float:right;
+}
+.buttonRow #NewsButton:hover {
+	background-position: 0 -75px;
+}
+.buttonRow #ContactButton {
+	background: url(/static/images/contact.jpg) no-repeat 0 0;
+	width: 170px;
+	height: 75px;
+	display: block;
+	text-indent: -9999px;
+	float: right;
+}
+.buttonRow #ContactButton:hover {
+	background-position: 0 -75px;
+}
+#presentArea {
+	position: relative;
+	width: 950px;
+	height: 448px;
+	text-align: center;
+}
+#presentAreaHome {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaAbout {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaUpload {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaNews {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+#presentAreaContact {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.subLogo {
+	float:left;
+	width:270px;
+	text-align:center;
+}

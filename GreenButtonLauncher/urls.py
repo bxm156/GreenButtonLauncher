@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'',include('GreenButtonLauncher.apps.gbcontent.urls')),
     url(r'',include('GreenButtonLauncher.apps.gbstorage.urls')),
     (r'^.*/$', include('django.contrib.flatpages.urls')),
 )

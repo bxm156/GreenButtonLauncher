@@ -8,7 +8,7 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to
 
 urlpatterns = patterns('GreenButtonLauncher.apps.gbstorage.views',
-    (r'^$', 'index'),
     (r'^get/(?P<apin>[a-zA-Z0-9+/]{7})/$','getData'),
     (r'^delete/(?P<apin>[a-zA-Z0-9+/]{7})/$','delete'),
+    (r'^hash/(?P<apin>[a-zA-Z0-9+/]{7})/$','getHash'),
 )
