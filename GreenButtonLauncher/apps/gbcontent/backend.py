@@ -3,7 +3,7 @@ Created on May 14, 2012
 
 @author: Bryan
 '''
-from backends.base import AbstractUploadBackend
+from ajaxuploader.backends.base import AbstractUploadBackend
 import cStringIO, hashlib, base64, uuid
 from django.db import IntegrityError
 from GreenButtonLauncher.apps.gbstorage.models import GreenButtonData
