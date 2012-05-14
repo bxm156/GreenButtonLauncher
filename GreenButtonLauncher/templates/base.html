@@ -24,7 +24,12 @@
                 action: "{% url my_ajax_upload %}",
 				button: document.getElementById('ajaxform'),
                 multiple: false,
+                onSubmit: function() {
+                	$('#ajaxSpinner').css('visibility','visible');
+                	return true;
+                },
                 onComplete: function(id, fileName, responseJSON) {
+                	$('#ajaxSpinner').css('visibility','hidden');
                     if(responseJSON.success) {
                     	$('#pinBox').html(responseJSON.pin)
                     } else {
@@ -73,6 +78,7 @@
 								
 							</div>
 							<div id="pinBox">
+								<img id="ajaxSpinner" src="{{ STATIC_URL }}images/spinner.gif">
 							</div>
 						</div>
 						<div id="presentAreaNews">
