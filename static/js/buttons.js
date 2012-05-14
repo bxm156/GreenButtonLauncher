@@ -4,12 +4,15 @@ $(function() {
 	$('#presentAreaNews').hide();
 	$('#presentAreaContact').hide();
 	$('#chooseFileControl')
-	$('#chooseFileButton').click(function() {
+	/*$('#chooseFileButton').click(function() {
 		$('#chooseFileControl').click();
+	});*/
+	$('#chooseFileButton').click(function() {
+		$('input[name="file"]').click();
 	});
-	$('#uploadFileButton').click(function() {
-		$('#uploadFileControl').click();
-	});
+	/*$('#uploadFileButton').click(function() {
+		$('#input[name="file"]').click();
+	});*/
 });
 function onAbout() {
 	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
