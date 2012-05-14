@@ -37,7 +37,13 @@
 							<img src="{{ STATIC_URL }}images/device.jpg">
 						</div>
 						<div id="presentAreaUpload">
-							<img src="{{ STATIC_URL }}images/device.jpg">
+							<form name="uploadForm" enctype="multipart/form-data">
+								<input id="chooseFileControl" type="file" name="file" />
+								<input id="uploadFileControl" type="submit" name="submit" />
+							</form>
+							<input type="image" id="chooseFileButton" src="{{ STATIC_URL}}images/greenbutton-choose.png">
+							<input type="image" id="uploadFileButton" src="{{ STATIC_URL}}images/greenbutton-upload.png">
+							<div id="pinBox"></div>
 						</div>
 						<div id="presentAreaNews">
 							<img src="{{ STATIC_URL }}images/device.jpg">
