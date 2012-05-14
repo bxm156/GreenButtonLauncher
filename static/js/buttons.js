@@ -3,34 +3,39 @@ $(function() {
 	$('#presentAreaUpload').hide();
 	$('#presentAreaNews').hide();
 	$('#presentAreaContact').hide();
+	$('#chooseFileControl')
+	$('#chooseFileButton').click(function() {
+		$('#chooseFileControl').click();
+	});
+	$('#uploadFileButton').click(function() {
+		$('#uploadFileControl').click();
+	});
 });
 function onAbout() {
-	$('#presentAreaHome').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaUpload').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaNews').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaContact').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaAbout').show("slide", { direction: "left" }, 1000);
+	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaUpload:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaNews:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaContact:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaAbout:hidden').show("slide", { direction: "left" }, 1000);
 }
 function onUpload() {
-	$('#presentAreaHome').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaAbout').hide("slide", { direction: "right" }, 1000);
-	$('#presentAreaNews').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaContact').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaUpload').show("slide", { direction: "left"}, 1000);
+	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaAbout:visible').hide("slide", { direction: "right" }, 1000);
+	$('#presentAreaNews:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaContact:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaUpload:hidden').show("slide", { direction: "left"}, 1000);
 }
 function onNews() {
-	$('#presentAreaHome').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaAbout').hide("slide", { direction: "right" }, 1000);
-	$('#presentAreaUpload').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaContact').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaNews').show("slide", { direction: "left"}, 1000);
+	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaAbout:visible').hide("slide", { direction: "right" }, 1000);
+	$('#presentAreaUpload:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaContact:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaNews:hidden').show("slide", { direction: "left"}, 1000);
 }
 function onContact() {
-	$('#presentAreaHome').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaAbout').hide("slide", { direction: "right" }, 1000);
-	$('#presentAreaUpload').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaNews').hide("slide", { direction: "right"}, 1000);
-	$('#presentAreaContact').show("slide", { direction: "left"}, 1000);
+	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaAbout:visible').hide("slide", { direction: "right" }, 1000);
+	$('#presentAreaUpload:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaNews:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaContact:hidden').show("slide", { direction: "left"}, 1000);
 }
-
-

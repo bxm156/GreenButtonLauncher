@@ -1,3 +1,6 @@
+.siteArea {
+	width:100%;
+}
 .headerBackground {
 	background-image: url(/static/images/header-bg.jpg);
 	background-repeat: repeat-x;
@@ -7,7 +10,7 @@
 .presentBackground {
 	background-image: url(/static/images/present-bg.jpg);
 	background-repeat: repeat-x;
-	height: 448px;
+	height: 530px;
 	text-align:center;
 }
 .buttonRow {
@@ -26,6 +29,8 @@
 }
 .buttonRow #AboutButton:hover {
 	background-position: 0 -75px;
+	cursor: pointer;
+	cursor: hand;
 }
 .buttonRow #UploadButton {
 	background: url(/static/images/upload.jpg) no-repeat 0 0;
@@ -37,6 +42,8 @@
 }
 .buttonRow #UploadButton:hover {
 	background-position: 0 -75px;
+	cursor: pointer;
+	cursor: hand;
 }
 .buttonRow #NewsButton {
 	background: url(/static/images/news.jpg) no-repeat 0 0;
@@ -48,6 +55,8 @@
 }
 .buttonRow #NewsButton:hover {
 	background-position: 0 -75px;
+	cursor: pointer;
+	cursor: hand;
 }
 .buttonRow #ContactButton {
 	background: url(/static/images/contact.jpg) no-repeat 0 0;
@@ -59,11 +68,13 @@
 }
 .buttonRow #ContactButton:hover {
 	background-position: 0 -75px;
+	cursor: pointer;
+	cursor: hand;
 }
 #presentArea {
 	position: relative;
 	width: 950px;
-	height: 448px;
+	height: 530px;
 	text-align: center;
 }
 #presentAreaHome {
@@ -83,6 +94,7 @@
 	text-align: center;
 	width: 100%;
 	height: 100%;
+	background-image: url(/static/images/uploadfile.jpg);
 }
 #presentAreaNews {
 	position: absolute;
@@ -100,4 +112,32 @@
 	float:left;
 	width:270px;
 	text-align:center;
+}
+#pinBox {
+	position:absolute;
+	top: 220px;
+	left: 675px;
+	width: 190px;
+	height: 170px;
+	text-align:center;
+}
+#chooseFileControl {
+	visibility: hidden;
+}
+#uploadFileControl {
+	visibility: hidden;
+}
+#chooseFileButton {
+	position:absolute;
+	width:192px;
+	height:191px;
+	left: 90px;
+	top: 200px;
+}
+#uploadFileButton {
+	position:absolute;
+	width:192px;
+	height:191px;
+	left: 368px;
+	top: 200px;
 }
