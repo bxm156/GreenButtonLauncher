@@ -22,7 +22,7 @@
             $(function(){
             var uploader = new qq.FileUploaderBasic({
                 action: "{% url my_ajax_upload %}",
-				button: document.getElementById('testform'),
+				button: document.getElementById('ajaxform'),
                 multiple: false,
                 onComplete: function(id, fileName, responseJSON) {
                     if(responseJSON.success) {
@@ -59,7 +59,7 @@
 							<img src="{{ STATIC_URL }}images/device.jpg">
 						</div>
 						<div id="presentAreaAbout">
-							<img src="{{ STATIC_URL }}images/device.jpg">
+							<img src="{{ STATIC_URL }}images/aboutContent.jpg">
 						</div>
 						<div id="presentAreaUpload">
 							<form name="uploadForm" enctype="multipart/form-data">
@@ -69,7 +69,7 @@
 							</form>
 							<input type="image" id="chooseFileButton" src="{{ STATIC_URL}}images/greenbutton-choose.png">
 							<input type="image" id="uploadFileButton" src="{{ STATIC_URL}}images/greenbutton-upload.png">
-							<div id="testform">
+							<div id="ajaxform">
 								
 							</div>
 							<div id="pinBox">
