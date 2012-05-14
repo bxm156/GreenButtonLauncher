@@ -122,7 +122,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'GreenButtonLauncher.apps.gbcontent',
-    'GreenButtonLauncher.apps.gbstorage'
+    'GreenButtonLauncher.apps.gbstorage',
+    'ajaxuploader',
    
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

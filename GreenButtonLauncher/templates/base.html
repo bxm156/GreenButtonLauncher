@@ -15,7 +15,32 @@
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css">
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>  
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.20.custom.min.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}js/buttons.js"></script> 
+		<script type="text/javascript" src="{{ STATIC_URL }}js/buttons.js"></script>
+		<script src="{{ STATIC_URL }}ajaxuploader/js/fileuploader.js" ></script>
+        <link href="{{ STATIC_URL }}ajaxuploader/css/fileuploader.css" media="screen" rel="stylesheet" type="text/css" />
+		 <script>
+            $(function(){
+            var uploader = new qq.FileUploaderBasic({
+                action: "{% url my_ajax_upload %}",
+				button: document.getElementById('testform'),
+                multiple: false,
+                onComplete: function(id, fileName, responseJSON) {
+                    if(responseJSON.success) {
+                    	$('#pinBox').html(responseJSON.pin)
+                    } else {
+                        alert("Upload failed!");
+                    }
+                },
+                onAllComplete: function(uploads) {
+                },
+                params: {
+                    'csrf_token': '{{ csrf_token }}',
+                    'csrf_name': 'csrfmiddlewaretoken',
+                    'csrf_xname': 'X-CSRFToken',
+                },
+            });
+            });
+        </script>
 		{% endblock css %}
 	</head>
 	<body>
@@ -38,12 +63,17 @@
 						</div>
 						<div id="presentAreaUpload">
 							<form name="uploadForm" enctype="multipart/form-data">
-								<input id="chooseFileControl" type="file" name="file" />
-								<input id="uploadFileControl" type="submit" name="submit" />
+								{% csrf_token %}
+								<input id="chooseFileControl" type="file" name="chooseFileControl" />
+								<input id="uploadFileControl" type="button" name="submit" />
 							</form>
 							<input type="image" id="chooseFileButton" src="{{ STATIC_URL}}images/greenbutton-choose.png">
 							<input type="image" id="uploadFileButton" src="{{ STATIC_URL}}images/greenbutton-upload.png">
-							<div id="pinBox"></div>
+							<div id="testform">
+								
+							</div>
+							<div id="pinBox">
+							</div>
 						</div>
 						<div id="presentAreaNews">
 							<img src="{{ STATIC_URL }}images/device.jpg">

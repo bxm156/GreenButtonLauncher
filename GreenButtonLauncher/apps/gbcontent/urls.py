@@ -7,9 +7,6 @@ Created on Apr 29, 2012
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('GreenButtonLauncher.apps.gbcontent.views',
-    (r'^$', 'index'),
-    (r'^news/$','news'),
-    (r'^about/$','about'),
-    (r'^contact/$','contact'),
-    (r'^upload/$','upload')
+    url(r'^$', 'start', name="start"),
+    url(r'ajax-upload$', 'import_uploader', name="my_ajax_upload"),
 )
