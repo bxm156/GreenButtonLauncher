@@ -103,13 +103,14 @@
 				</div>
 				<div id="contentArea" class="span-24 last">
 					{% block contentArea %}
-					
+					<div id = "downloadLink" style="text-align:center">
+						<a href="{{ STATIC_URL }}GreenButtonProject.apk">Download the App</a>
+					</div>
 					{% endblock contentArea %}
 				</div>
 				
 				{% endblock body %}
 			</div>
-		<a href="{{ STATIC_URL }}GreenButtonProject.apk">Download the App</a>
 		</div>
 	</body>
 </html>
