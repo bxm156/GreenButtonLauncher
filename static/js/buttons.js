@@ -14,6 +14,13 @@ $(function() {
 		$('#input[name="file"]').click();
 	});*/
 });
+function onHome() {
+	$('#presentAreaUpload:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaNews:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaContact:visible').hide("slide", { direction: "right"}, 1000);
+	$('#presentAreaAbout:visible').hide("slide", { direction: "right" }, 1000);
+	$('#presentAreaHome:hidden').show("slide", { direction: "left"}, 1000);
+}
 function onAbout() {
 	$('#presentAreaHome:visible').hide("slide", { direction: "right"}, 1000);
 	$('#presentAreaUpload:visible').hide("slide", { direction: "right"}, 1000);
