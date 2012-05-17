@@ -61,6 +61,11 @@
 					{% block present %}
 					<div id="presentArea">
 						<div id="presentAreaHome">
+							<div id = "googlePlay" style="text-align:center;font-size:24px;color:#000000">
+								<a href="http://play.google.com/store/apps/details?id=com.bryanmarty.greenbutton" target="_blank">
+						  			<img alt="Android app on Google Play" src="http://www.android.com/images/brand/android_app_on_play_logo_large.png" />
+								</a>
+							</div>
 							<img src="{{ STATIC_URL }}images/device.jpg">
 						</div>
 						<div id="presentAreaAbout">
@@ -95,7 +100,7 @@
 					<a id="AboutButton" onclick="onAbout()">About</a>
 					<a id="UploadButton" onclick="onUpload()">Upload</a>
 					<div class="subLogo">
-						<img src="{{ STATIC_URL }}images/bwlogo.jpg">
+						<img src="{{ STATIC_URL }}images/bwlogo.jpg" onclick="onHome()">
 					</div>
 					<a id="ContactButton" onclick="onContact()">Contact</a>
 					<a id="NewsButton" onclick="onNews()">News</a>
@@ -103,9 +108,8 @@
 				</div>
 				<div id="contentArea" class="span-24 last">
 					{% block contentArea %}
-					<div id = "downloadLink" style="text-align:center;font-size:24px;color:#000000">
-						<a href="{{ STATIC_URL }}BudgetItYourself.apk">Download the App</a>
-					</div>
+						<!-- <a href="{{ STATIC_URL }}BudgetItYourself.apk">Download the App</a> -->
+					
 					{% endblock contentArea %}
 				</div>
 				
