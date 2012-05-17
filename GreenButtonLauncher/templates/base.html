@@ -13,9 +13,11 @@
 			<link rel="stylesheet" href="{{ STATIC_URL }}blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}shadowbox/shadowbox.css" type="text/css">
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>  
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.20.custom.min.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/buttons.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}shadowbox/shadowbox.js"></script>
 		<script src="{{ STATIC_URL }}ajaxuploader/js/fileuploader.js" ></script>
         <link href="{{ STATIC_URL }}ajaxuploader/css/fileuploader.css" media="screen" rel="stylesheet" type="text/css" />
 		 <script>
@@ -46,6 +48,9 @@
             });
             });
         </script>
+        <script type="text/javascript">
+			Shadowbox.init();
+		</script>
 		{% endblock css %}
 	</head>
 	<body>
@@ -103,7 +108,7 @@
 						<img src="{{ STATIC_URL }}images/bwlogo.jpg" onclick="onHome()">
 					</div>
 					<a id="ContactButton" onclick="onContact()">Contact</a>
-					<a id="NewsButton" onclick="onNews()">News</a>
+					<a id="NewsButton" onclick="onHome()" href="http://player.vimeo.com/video/42239604?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" title="Budget It Yourself" rel="shadowbox;width=943;height=530">News</a>
 					{% endblock buttonRow %}
 				</div>
 				<div id="contentArea" class="span-24 last">
