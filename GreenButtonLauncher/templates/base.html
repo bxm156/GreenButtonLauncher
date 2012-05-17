@@ -26,6 +26,8 @@
                 action: "{% url my_ajax_upload %}",
 				button: document.getElementById('ajaxform'),
                 multiple: false,
+                allowedExtensions: ['xml'],
+                sizeLimit: 20971520,
                 onSubmit: function() {
                 	$('#ajaxSpinner').css('visibility','visible');
                 	return true;
